@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Prince Benson meituan</title>
+</head>
+<body>
+	<h1>Prince Benson Fusion Restaurant</h1>
+	<p>Tasty Treats To Your Door</p>
+
+	<h2>Here are all our items!</h2>
+
+	<!-- Item 1 -->
+	<p>Coffee:15RMB</p>
+	<img src="http://coffee-brewing-methods.com/wp-content/uploads/2015/02/latte.jpg">
+	<br>
+
+	<!-- Item2 -->
+	<p>Scones:10RMB</p>
+	<img src="http://www.thirstyfortea.com/wp-content/uploads/2014/02/orange-scones-12.jpg">
+	<br>
+
+	<!-- Item3 -->
+	<p>Shortcake:25RMB</p>
+	<img src="https://tse2.mm.bing.net/th?id=OIP.nfsyVuM9WlhodIsLGK3fCgHaE7&pid=Api">
+
+	<!-- Order Form -->
+	<h2>Place your Order</h2>
+	<form action="{% url 'meituan:home_page' %}"method= "POST">
+		{% csrf_token %}
+		<input type="text" name"time" placeholder="Please Type Which Item You Want"><br>
+		<textarea name="customer_name" placeholder="Please Type Your address" ></textarea><br>
+		<input type="submit" value="Please Your Order">
+	</form>
+
+	<!-- Show Order -->
+	<h1>Your Order:</h1>
+	<p>Item Ordered:{{time}}</p>
+	<p>Delivery Address:{{customer_name}}</p>
+
+</body>
+</html>
